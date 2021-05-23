@@ -34,8 +34,6 @@ def RevisarSecuencia(secuencia):
             return False
     return True
 
-    
-
 secuencia= [1,2,3,4,16]
 
 if RevisarSecuencia(secuencia):

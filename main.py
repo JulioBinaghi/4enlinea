@@ -27,14 +27,20 @@ def SoltarFichaenColumna(ficha,columna,tablero):
 def DibujarTablero(tablero):
     for element in tablero: 
         print(element)
-        
 
+def RevisarSecuencia(secuencia):
+    for element in secuencia:
+        if element > 7 or element < 1:
+            return False
+    return True
 
-secuencia= [1,2,3,4]
+    
 
-DibujarTablero(
-    CompletarTableroenOrden(
-        secuencia,
-        TableroVacio()
-        )
+secuencia= [1,2,3,4,16]
+
+if RevisarSecuencia(secuencia):
+    DibujarTablero(
+        CompletarTableroenOrden(secuencia,TableroVacio()
+         )
     )   
+else: print ("El tablero no existe")    

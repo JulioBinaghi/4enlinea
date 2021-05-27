@@ -34,11 +34,33 @@ def RevisarSecuencia(secuencia):
             return False
     return True
 
-secuencia= [1,2,3,4,16]
+def contenidoColumna(nro_columna,tablero):
+    columna = []
+    for element in tablero:
+        celda = element[nro_columna - 1]
+        columna.append(celda)     
+    return columna 
 
+def todasColumnas(tablero):
+    for x in range (0, 7):
+        columna = []
+        columna = contenidoColumna(x, tablero)
+        print(columna)
+    return
+
+def todasFilas(tablero):
+    for element in tablero:
+        print(element)
+
+secuencia= [ 1, 2, 3, 4, 5]
+
+tablero = [] 
 if RevisarSecuencia(secuencia):
-    DibujarTablero(
-        CompletarTableroenOrden(secuencia,TableroVacio()
-         )
-    )   
-else: print ("El tablero no existe")    
+    tablero = CompletarTableroenOrden(secuencia,TableroVacio())
+    """DibujarTablero(tablero)"""
+  
+else: print("El tablero no existe")    
+
+"""print(contenidoColumna( 2, tablero))"""   
+"""print(todasColumnas(tablero))"""
+"""print(todasFilas(tablero))"""

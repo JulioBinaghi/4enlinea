@@ -23,10 +23,6 @@ def SoltarFichaenColumna(ficha,columna,tablero):
         if tablero[fila - 1][columna - 1] == 0: 
            tablero[fila - 1][columna - 1] = ficha 
            return
-       
-def DibujarTablero(tablero):
-    for element in tablero: 
-        print(element)
 
 def RevisarSecuencia(secuencia):
     for element in secuencia:
@@ -52,12 +48,30 @@ def todasFilas(tablero):
     for element in tablero:
         print(element)
 
+def dibujarTablero(tablero):
+    print(f' +-- -- -- -- -- -- -- --+', end='')
+    print('')
+    for fila in tablero:
+        print(f' | ', end='')
+        for celda in fila:
+            if celda == 0:
+                print(f' 0 ', end='')
+            else:
+                if celda == 1:
+                    print(f' %s ' %celda, end='')
+                else:
+                    print(f' %s ' %celda, end='')
+        print(f' | ', end='')
+        print('')
+    print(f' +-----------------------+ ', end='')
+    print('')        
+
 secuencia= [ 1, 2, 3, 4, 5]
 
 tablero = [] 
 if RevisarSecuencia(secuencia):
     tablero = CompletarTableroenOrden(secuencia,TableroVacio())
-    """DibujarTablero(tablero)"""
+    dibujarTablero(tablero)
   
 else: print("El tablero no existe")    
 
